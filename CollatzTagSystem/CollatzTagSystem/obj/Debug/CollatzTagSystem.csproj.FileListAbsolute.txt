@@ -1,0 +1,6 @@
+C:\Users\MathMan\Documents\Visual Studio 2015\Projects\CodeEveryday\CollatzTagSystem\CollatzTagSystem\bin\Debug\CollatzTagSystem.exe.config
+C:\Users\MathMan\Documents\Visual Studio 2015\Projects\CodeEveryday\CollatzTagSystem\CollatzTagSystem\bin\Debug\CollatzTagSystem.exe
+C:\Users\MathMan\Documents\Visual Studio 2015\Projects\CodeEveryday\CollatzTagSystem\CollatzTagSystem\bin\Debug\CollatzTagSystem.pdb
+C:\Users\MathMan\Documents\Visual Studio 2015\Projects\CodeEveryday\CollatzTagSystem\CollatzTagSystem\obj\Debug\CollatzTagSystem.csprojResolveAssemblyReference.cache
+C:\Users\MathMan\Documents\Visual Studio 2015\Projects\CodeEveryday\CollatzTagSystem\CollatzTagSystem\obj\Debug\CollatzTagSystem.exe
+C:\Users\MathMan\Documents\Visual Studio 2015\Projects\CodeEveryday\CollatzTagSystem\CollatzTagSystem\obj\Debug\CollatzTagSystem.pdb
