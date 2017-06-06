@@ -1,0 +1,6 @@
+C:\Users\MathMan\Documents\Visual Studio 2015\Projects\CodeEveryday\CodeDay\Projects\Resistance Calculator\Resistance Calculator\bin\Debug\Resistance Calculator.exe.config
+C:\Users\MathMan\Documents\Visual Studio 2015\Projects\CodeEveryday\CodeDay\Projects\Resistance Calculator\Resistance Calculator\bin\Debug\Resistance Calculator.exe
+C:\Users\MathMan\Documents\Visual Studio 2015\Projects\CodeEveryday\CodeDay\Projects\Resistance Calculator\Resistance Calculator\bin\Debug\Resistance Calculator.pdb
+C:\Users\MathMan\Documents\Visual Studio 2015\Projects\CodeEveryday\CodeDay\Projects\Resistance Calculator\Resistance Calculator\obj\Debug\Resistance Calculator.csprojResolveAssemblyReference.cache
+C:\Users\MathMan\Documents\Visual Studio 2015\Projects\CodeEveryday\CodeDay\Projects\Resistance Calculator\Resistance Calculator\obj\Debug\Resistance Calculator.exe
+C:\Users\MathMan\Documents\Visual Studio 2015\Projects\CodeEveryday\CodeDay\Projects\Resistance Calculator\Resistance Calculator\obj\Debug\Resistance Calculator.pdb
