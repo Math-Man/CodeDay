@@ -1,2 +1,0 @@
-C:\Users\MathMan\Documents\Visual Studio 2015\Projects\CodeEveryday\CodeDay\Projects\De_Brujin sequences\De_Brujin sequences\bin\Debug\De_Brujin sequences.exe.config
-C:\Users\MathMan\Documents\Visual Studio 2015\Projects\CodeEveryday\CodeDay\Projects\De_Brujin sequences\De_Brujin sequences\obj\Debug\De_Brujin sequences.csprojResolveAssemblyReference.cache
