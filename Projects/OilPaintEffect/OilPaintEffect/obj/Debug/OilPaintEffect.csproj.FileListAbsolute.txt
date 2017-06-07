@@ -1,0 +1,10 @@
+C:\Users\MathMan\Documents\Visual Studio 2015\Projects\CodeEveryday\CodeDay\Projects\OilPaintEffect\OilPaintEffect\bin\Debug\OilPaintEffect.exe.config
+C:\Users\MathMan\Documents\Visual Studio 2015\Projects\CodeEveryday\CodeDay\Projects\OilPaintEffect\OilPaintEffect\bin\Debug\OilPaintEffect.exe
+C:\Users\MathMan\Documents\Visual Studio 2015\Projects\CodeEveryday\CodeDay\Projects\OilPaintEffect\OilPaintEffect\bin\Debug\OilPaintEffect.pdb
+C:\Users\MathMan\Documents\Visual Studio 2015\Projects\CodeEveryday\CodeDay\Projects\OilPaintEffect\OilPaintEffect\obj\Debug\OilPaintEffect.csprojResolveAssemblyReference.cache
+C:\Users\MathMan\Documents\Visual Studio 2015\Projects\CodeEveryday\CodeDay\Projects\OilPaintEffect\OilPaintEffect\obj\Debug\OilPaintEffect.Form1.resources
+C:\Users\MathMan\Documents\Visual Studio 2015\Projects\CodeEveryday\CodeDay\Projects\OilPaintEffect\OilPaintEffect\obj\Debug\OilPaintEffect.Properties.Resources.resources
+C:\Users\MathMan\Documents\Visual Studio 2015\Projects\CodeEveryday\CodeDay\Projects\OilPaintEffect\OilPaintEffect\obj\Debug\OilPaintEffect.csproj.GenerateResource.Cache
+C:\Users\MathMan\Documents\Visual Studio 2015\Projects\CodeEveryday\CodeDay\Projects\OilPaintEffect\OilPaintEffect\obj\Debug\OilPaintEffect.exe
+C:\Users\MathMan\Documents\Visual Studio 2015\Projects\CodeEveryday\CodeDay\Projects\OilPaintEffect\OilPaintEffect\obj\Debug\OilPaintEffect.pdb
+C:\Users\MathMan\Documents\Visual Studio 2015\Projects\CodeEveryday\CodeDay\Projects\OilPaintEffect\OilPaintEffect\obj\Debug\OilPaintEffect.About.resources
