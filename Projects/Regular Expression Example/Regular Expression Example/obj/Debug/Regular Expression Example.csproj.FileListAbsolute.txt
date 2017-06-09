@@ -1,0 +1,6 @@
+C:\Users\MathMan\Documents\Visual Studio 2015\Projects\CodeEveryday\CodeDay\Projects\Regular Expression Example\Regular Expression Example\bin\Debug\Regular Expression Example.exe.config
+C:\Users\MathMan\Documents\Visual Studio 2015\Projects\CodeEveryday\CodeDay\Projects\Regular Expression Example\Regular Expression Example\bin\Debug\Regular Expression Example.exe
+C:\Users\MathMan\Documents\Visual Studio 2015\Projects\CodeEveryday\CodeDay\Projects\Regular Expression Example\Regular Expression Example\bin\Debug\Regular Expression Example.pdb
+C:\Users\MathMan\Documents\Visual Studio 2015\Projects\CodeEveryday\CodeDay\Projects\Regular Expression Example\Regular Expression Example\obj\Debug\Regular Expression Example.csprojResolveAssemblyReference.cache
+C:\Users\MathMan\Documents\Visual Studio 2015\Projects\CodeEveryday\CodeDay\Projects\Regular Expression Example\Regular Expression Example\obj\Debug\Regular Expression Example.exe
+C:\Users\MathMan\Documents\Visual Studio 2015\Projects\CodeEveryday\CodeDay\Projects\Regular Expression Example\Regular Expression Example\obj\Debug\Regular Expression Example.pdb
