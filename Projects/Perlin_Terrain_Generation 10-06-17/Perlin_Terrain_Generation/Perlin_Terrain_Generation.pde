@@ -4,12 +4,12 @@
 */
 
 float frequencyMult = 12;  //Makes the map cover more area (between 1 - 25)
-float octaves = 2;    //# of different octaves on the map(different elevation lines)(between 1 - 8)(single octave usually gives islands)
+float octaves = 6;    //# of different octaves on the map(different elevation lines)(between 1 - 8)(single octave usually gives islands)
 float redist = 1; //Generic Elevation of the map (between 0.01 - 10)
-float waterLine = 0.8; //Where the water begins. (between 0.1 - 1.5)
-float beachLine = 0.9; // where the beach/sandy area is (between 0.1 - 1.5)
+float waterLine = 0.95; //Where the water begins. (between 0.1 - 1.5)
+float beachLine = 1.05; // where the beach/sandy area is (between 0.1 - 1.5)
 float rockyLine = 1.15; //How high the rocky mountains start (between 0.1 - 1.5)
-float snowLine = 1.25; // How low the snow is (between 0.1 - 1.5)
+float snowLine = 1.35; // How low the snow is (between 0.1 - 1.5)
 void setup()
 {
   size(600,600);
