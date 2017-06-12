@@ -1,0 +1,6 @@
+C:\Users\MathMan\Documents\Visual Studio 2015\Projects\CodeEveryday\CodeDay\Projects\l33t Speak Translator\l33t Speak Translator\bin\Debug\l33t Speak Translator.exe.config
+C:\Users\MathMan\Documents\Visual Studio 2015\Projects\CodeEveryday\CodeDay\Projects\l33t Speak Translator\l33t Speak Translator\bin\Debug\l33t Speak Translator.exe
+C:\Users\MathMan\Documents\Visual Studio 2015\Projects\CodeEveryday\CodeDay\Projects\l33t Speak Translator\l33t Speak Translator\bin\Debug\l33t Speak Translator.pdb
+C:\Users\MathMan\Documents\Visual Studio 2015\Projects\CodeEveryday\CodeDay\Projects\l33t Speak Translator\l33t Speak Translator\obj\Debug\l33t Speak Translator.csprojResolveAssemblyReference.cache
+C:\Users\MathMan\Documents\Visual Studio 2015\Projects\CodeEveryday\CodeDay\Projects\l33t Speak Translator\l33t Speak Translator\obj\Debug\l33t Speak Translator.exe
+C:\Users\MathMan\Documents\Visual Studio 2015\Projects\CodeEveryday\CodeDay\Projects\l33t Speak Translator\l33t Speak Translator\obj\Debug\l33t Speak Translator.pdb
