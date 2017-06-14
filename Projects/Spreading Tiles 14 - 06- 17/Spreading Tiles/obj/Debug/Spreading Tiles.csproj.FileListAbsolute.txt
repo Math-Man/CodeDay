@@ -1,0 +1,6 @@
+C:\Users\MathMan\Documents\Visual Studio 2015\Projects\CodeEveryday\CodeDay\Projects\Spreading Tiles\Spreading Tiles\bin\Debug\Spreading Tiles.exe.config
+C:\Users\MathMan\Documents\Visual Studio 2015\Projects\CodeEveryday\CodeDay\Projects\Spreading Tiles\Spreading Tiles\bin\Debug\Spreading Tiles.exe
+C:\Users\MathMan\Documents\Visual Studio 2015\Projects\CodeEveryday\CodeDay\Projects\Spreading Tiles\Spreading Tiles\bin\Debug\Spreading Tiles.pdb
+C:\Users\MathMan\Documents\Visual Studio 2015\Projects\CodeEveryday\CodeDay\Projects\Spreading Tiles\Spreading Tiles\obj\Debug\Spreading Tiles.csprojResolveAssemblyReference.cache
+C:\Users\MathMan\Documents\Visual Studio 2015\Projects\CodeEveryday\CodeDay\Projects\Spreading Tiles\Spreading Tiles\obj\Debug\Spreading Tiles.exe
+C:\Users\MathMan\Documents\Visual Studio 2015\Projects\CodeEveryday\CodeDay\Projects\Spreading Tiles\Spreading Tiles\obj\Debug\Spreading Tiles.pdb
