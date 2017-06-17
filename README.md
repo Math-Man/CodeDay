@@ -17,3 +17,4 @@ List of what I've done so far:
 | Spreading Fire | 14/06/17   |C# |
 | Worm Propagation | 15/06/17   |Processing (java)|
 | - | 16/06/17   | - |
+| Random Walker | 17/06/17   |Processing (java)|
