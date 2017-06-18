@@ -18,3 +18,4 @@ List of what I've done so far:
 | Worm Propagation | 15/06/17   |Processing (java)|
 | - | 16/06/17   | - |
 | Random Walker | 17/06/17   |Processing (java)|
+| - | 18/06/17   | - |
