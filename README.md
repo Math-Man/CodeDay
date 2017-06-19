@@ -19,3 +19,4 @@ List of what I've done so far:
 | - | 16/06/17   | - |
 | Random Walker | 17/06/17   |Processing (java)|
 | - | 18/06/17   | - |
+| Bitwise Multiplication | 14/06/17   | C# |
