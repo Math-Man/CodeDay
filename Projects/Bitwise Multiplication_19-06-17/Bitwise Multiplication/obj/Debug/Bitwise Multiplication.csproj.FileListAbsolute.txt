@@ -1,0 +1,9 @@
+C:\Users\MathMan\Documents\Visual Studio 2015\Projects\CodeEveryday\CodeDay\Projects\Bitwise Multiplication\Bitwise Multiplication\bin\Debug\Bitwise Multiplication.exe.config
+C:\Users\MathMan\Documents\Visual Studio 2015\Projects\CodeEveryday\CodeDay\Projects\Bitwise Multiplication\Bitwise Multiplication\bin\Debug\Bitwise Multiplication.exe
+C:\Users\MathMan\Documents\Visual Studio 2015\Projects\CodeEveryday\CodeDay\Projects\Bitwise Multiplication\Bitwise Multiplication\bin\Debug\Bitwise Multiplication.pdb
+C:\Users\MathMan\Documents\Visual Studio 2015\Projects\CodeEveryday\CodeDay\Projects\Bitwise Multiplication\Bitwise Multiplication\obj\Debug\Bitwise Multiplication.csprojResolveAssemblyReference.cache
+C:\Users\MathMan\Documents\Visual Studio 2015\Projects\CodeEveryday\CodeDay\Projects\Bitwise Multiplication\Bitwise Multiplication\obj\Debug\Bitwise Multiplication.exe
+C:\Users\MathMan\Documents\Visual Studio 2015\Projects\CodeEveryday\CodeDay\Projects\Bitwise Multiplication\Bitwise Multiplication\obj\Debug\Bitwise Multiplication.pdb
+C:\Users\MathMan\Documents\Visual Studio 2015\Projects\CodeEveryday\CodeDay\Projects\Bitwise Multiplication_19-06-17\Bitwise Multiplication\bin\Debug\Bitwise Multiplication.exe.config
+C:\Users\MathMan\Documents\Visual Studio 2015\Projects\CodeEveryday\CodeDay\Projects\Bitwise Multiplication_19-06-17\Bitwise Multiplication\obj\Debug\Bitwise Multiplication.exe
+C:\Users\MathMan\Documents\Visual Studio 2015\Projects\CodeEveryday\CodeDay\Projects\Bitwise Multiplication_19-06-17\Bitwise Multiplication\obj\Debug\Bitwise Multiplication.pdb
