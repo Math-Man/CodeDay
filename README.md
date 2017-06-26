@@ -22,3 +22,8 @@ List of what I've done so far:
 | Bitwise Multiplication | 19/06/17   | C# |
 | - | 20/06/17   | - |
 | Brain Fck Interpreter | 21/06/17   | C# |
+| - | 22/06/17   | (Hiatus, no reliable internet for 5-6 days) |
+| - | 23/06/17   | - |
+| - | 24/06/17   | - |
+| - | 25/06/17   | - |
+| - | 26/06/17   | - |
