@@ -6,10 +6,11 @@
 
 /***********************************/
 //What the populations are made up of
+//Position of a unit is the gene of a unit, Color is also carried over the generations.
 class Unit
 {
   int posX, posY;
-  color strokeColor;
+  color strokeR,strokeG,strokeB;
   
   public Unit(int x, int y)
   {
@@ -17,14 +18,16 @@ class Unit
     this.posY = y;
   }
   
-  public void setColor(color col)
+  public void setColor(int r, int g, int b)
   {
-    this.strokeColor = col;
+    this.strokeR = r;
+    this.strokeG = g;
+    this.strokeB = b;
   }
   
   public void display()
   {
-    stroke(strokeColor);
+    stroke(strokeR, strokeG, strokeB);
     point(posX, posY);
   }
 }
@@ -33,11 +36,17 @@ class Unit
 class Population
 {
    private ArrayList<Unit> pop = new ArrayList<Unit>();
-   int popSize;
+   public int popSize;
    
+   //Create a random set of units upon constructor call
    public Population(int popSize)
    {
      this.popSize = popSize;
+     for(int i = 0 ; i < popSize ; i++) 
+     {
+         Unit u = new Unit(floor(random(1,width)), floor(random(1,width)));
+         u.setColor(floor(random(1,255)), floor(random(1,255)), floor(random(1,255)));
+     }
    }
    
    public ArrayList<Unit> getPop()
@@ -55,7 +64,7 @@ class Population
 }
 
 /*************************************/
-/*Area where the Units attempt to fall, further away a unit from the center of this area, less the finesse*/
+/*Area where the Units attempt to fall, further away a unit from the center of this area, less the finess"*/
 class Area
 {
     int areaX, areaY, areaWidth, areaHeight;
@@ -83,11 +92,25 @@ class Area
     
 }
 
+
+class FitnessCalc
+{
+  //Calculate the fitness of the unit(How far away the unit is from the area and map it to something between 0 and 100)
+  public int getFitness(Unit u, Area a)
+  {
+    //Get distance between point and area's center
+    float distance = sqrt( pow((u.posX - a.areaX),2) + pow((u.posY - a.areaY),2)  );
+    float fitness = map(distance, 0, width*height, 0, 100);
+    
+    return 1;
+  }
+}
+
+
 //Main controller of the genetic algorithm (Evaluation, Selection, Crossover and Mutation)
 class GeneticAlgorithm 
 {
-  
-
+  float mutationRate;
   Population current, next;
   
   public GeneticAlgorithm(int popSize)
