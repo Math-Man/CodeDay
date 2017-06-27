@@ -27,3 +27,4 @@ List of what I've done so far:
 | - | 24/06/17   | - |
 | - | 25/06/17   | - |
 | - | 26/06/17   | - |
+| - | 27/06/17   | Hiatus Over |
