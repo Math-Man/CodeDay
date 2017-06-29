@@ -28,3 +28,5 @@ List of what I've done so far:
 | - | 25/06/17   | - |
 | - | 26/06/17   | - |
 | Hiatus Over | 27/06/17   | - |
+| Worked on Genetic Alg | 28/06/17   |Processing (java)|
+| Finished Genetic Alg | 29/06/17   |Processing (java)|
