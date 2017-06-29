@@ -2,18 +2,32 @@
 
 //Simple genetic algorithm where finesse is calculated by how close the pops are to the center of the circle
 
-//I'll spread this project into 2 days as the 1st day went into research.
+//This "program" took way longer than it should have becouse of the hiatus and its way more messy than it should have been but still.
+//This thing still has way too many flaws but its still a working concept.
+
+
+/*Parameters*/
+
+int popSize = 100;                //Number of individual units in the population
+int sampleSize = 5;               //Sample size when selecting parents
+float selectionBias = 0.85;       //How likely it is for fittest unit within a sample to be selected
+float naturalDrag = 0.2;          //Strength of natural movement. (similar to mutation but weaker)
+float mutationRate = 0.08;        //Chance of getting x and y position replaced with a new random number.
+float mutationStrength = 0.15;     //How strong the mutation is
+
+
+
+
 
 Area a;
 GeneticAlgorithm g;
-Unit u;
 void settings()
 {
   size(600,600);
+  
   //Set the area
-  a = new Area(50,50,100,255);
-  g = new GeneticAlgorithm(70, 0.05, 0.05, 4, a);
-  u = g.crossOver(g.current.pop.get(0), g.current.pop.get(1));
+  a = new Area();
+  g = new GeneticAlgorithm(popSize, selectionBias, naturalDrag, mutationRate, mutationStrength, sampleSize, a); 
 }
 
 int c = 0;
@@ -25,17 +39,11 @@ void draw()
   g.current.displayPop();
   //println("p1: " + g.current.pop.get(0).posX + " " + g.current.pop.get(0).posY + "\np2: " +g.current.pop.get(1).posX +" "+ g.current.pop.get(1).posY+ "\nnew: " + u.posX + " " + u.posY);
   g.nextGeneration();
-  println(c + "--------------------------------------------------------------------------------");
-  delay(260);
+  delay(1000);
   c++;
   
 
 }
-
-
-
-
-
 
 
 
@@ -136,7 +144,7 @@ class Area
       
       areaCenterX = areaX + areaWidth/2;
       areaCenterY = areaY + areaHeight/2;
-      println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! " + areaCenterX + " " + areaCenterY);
+     
     }
     
      //Draws the rectangle area
@@ -154,11 +162,13 @@ class Area
 class GeneticAlgorithm 
 {
   float mutationRate, mutationStrength;  //number between 0 and 1
+  float naturalDrag; // number between 0 and 1 (Strength of random natural drag)
+  float bias; // How likely it is for fittest to be chosen (between 0 and 1)
   Population current;
-  int popSize, selectionRange;
+  int popSize, selectionRange;  //Selection range decides the amount of units that will be grouped in tourney selection
   Area area;
   
-  public GeneticAlgorithm(int popSize, float mRate, float mStrength, int selectionRange, Area a)
+  public GeneticAlgorithm(int popSize, float bias, float naturalDrag, float mRate, float mStrength, int selectionRange, Area a)
   {
     if(popSize < 2){popSize = 2;}
     if(mRate > 1 || mRate < 0) {mRate = 0.05;}
@@ -167,6 +177,8 @@ class GeneticAlgorithm
     this.current = new Population(popSize);//at the beginning current population is random and next gen is empty
     this.mutationRate = mRate;
     this.mutationStrength = mStrength;
+    this.bias = bias;
+    this.naturalDrag = naturalDrag;
     this.popSize = popSize;
     this.selectionRange = selectionRange;
     this.area = a;
@@ -181,33 +193,28 @@ class GeneticAlgorithm
     
     for(int i = 0; i < popSize; i++)
     {
-       println("Setting unit: " + i);
        //Select 2 Units
        Unit parent1, parent2, child;
       
        parent1 = tournySelection();
        parent2 = tournySelection();
-       println("\nParents: " + parent1.posX +" "+ parent2.posX);
+       //println("\nParents: " + parent1.posX +" "+ parent2.posX);
        //Crossover Between 2 Units
        child = crossOver(parent1, parent2);
-       println("child: " + child.posX);
+       //println("child: " + child.posX);
        //Mutate the new Unit
        child = mutate(child);
-       println("Mutated Child: " + child.posX);
+       //println("Mutated Child: " + child.posX);
        //Save the unit
        child.setColor(floor(random(parent1.strokeR, parent2.strokeR)), floor(random(parent1.strokeG, parent2.strokeG)), floor(random(parent1.strokeB, parent2.strokeB)));
        next.pop.add(child);
-       println("Added! " + i);
+       //println("Added! " + i);
        
     }
     
     //Display this generation and replace the current generation!!!
     current = next;
-    //this.current = this.next;
-    for(Unit children: next.pop)
-    {
-      println("Child: " + children.posX);
-    }
+
    
   }
   
@@ -224,14 +231,22 @@ class GeneticAlgorithm
     return u;
   }
   
+  //Random drag that always occurs at varying magnitude and direction, adds a more "natural" feeling to movement. Strength is decided with naturalDrag property
+  //Strength of drag is decided on the pop size, higher pop size means less space to move
+  public Unit drag(Unit u)
+  {
+    u.posX = u.posX + floor(((random(-1,1)) * naturalDrag * random(0, 3.33 * width / popSize)));
+    u.posY = u.posX + floor(((random(-1,1)) * naturalDrag * random(0, 3.33 * height / popSize)));
+      
+    return u;
+  }
   
   //In this case crossover gets a random coordinate value between 2 crossed over units
   public Unit crossOver(Unit parent1, Unit parent2)
   {
     Unit child;
-    int newX = floor(random(min(parent1.posX,parent2.posX), max(parent2.posX,parent1.posX)));
-    int newY = floor(random(min(parent1.posY,parent2.posY), max(parent2.posY,parent1.posY)));
-    
+    int newX = floor(random( (min(parent1.posX,parent2.posX)), ( max(parent2.posX,parent1.posX))));
+    int newY = floor(random( (min(parent1.posY,parent2.posY)), ( max(parent2.posY,parent1.posY))));
     child = new Unit(newX, newY);
     return child;
     
@@ -242,8 +257,8 @@ class GeneticAlgorithm
   public float getFitness(Unit u)
   {
     //Get distance between point and area's center
-    float distance = sqrt( pow((u.posX - area.areaX),2) + pow((u.posY - area.areaY),2)  );
-    float fitness = map(distance, 0, width * height, 0, 100);
+    float distance = sqrt( pow((u.posX - area.areaCenterX),2) + pow((u.posY - area.areaCenterY),2)  );
+    float fitness = map(-distance, 0, width * height, 0, 100);
     
     return fitness;
   }
@@ -274,7 +289,15 @@ class GeneticAlgorithm
     {
       tourny[j] = current.pop.get( floor( random(0, popSize) ) );//Get a random unit from current pop
     }
-    return getFittest(tourny);
+    //If the bias check passes, return the fittest, otherwise return a random unit
+    if(random(0,1) < bias)
+    {
+      return getFittest(tourny);
+    }
+    else
+    {
+      return tourny[floor( random(0, selectionRange) )];
+    }
     
   }
 
