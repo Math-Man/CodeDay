@@ -1,0 +1,6 @@
+C:\Files\Programming\Workspace\Git\CodeDay\Projects\TalkingClock_01-07-17\TalkingClock_01-07-17\bin\Debug\TalkingClock_01-07-17.exe.config
+C:\Files\Programming\Workspace\Git\CodeDay\Projects\TalkingClock_01-07-17\TalkingClock_01-07-17\bin\Debug\TalkingClock_01-07-17.exe
+C:\Files\Programming\Workspace\Git\CodeDay\Projects\TalkingClock_01-07-17\TalkingClock_01-07-17\bin\Debug\TalkingClock_01-07-17.pdb
+C:\Files\Programming\Workspace\Git\CodeDay\Projects\TalkingClock_01-07-17\TalkingClock_01-07-17\obj\Debug\TalkingClock_01-07-17.csprojResolveAssemblyReference.cache
+C:\Files\Programming\Workspace\Git\CodeDay\Projects\TalkingClock_01-07-17\TalkingClock_01-07-17\obj\Debug\TalkingClock_01-07-17.exe
+C:\Files\Programming\Workspace\Git\CodeDay\Projects\TalkingClock_01-07-17\TalkingClock_01-07-17\obj\Debug\TalkingClock_01-07-17.pdb
