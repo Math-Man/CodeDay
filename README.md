@@ -30,3 +30,5 @@ List of what I've done so far:
 | Hiatus Over | 27/06/17   | - |
 | Worked on Genetic Alg | 28/06/17   |Processing (java)|
 | Finished Genetic Alg | 29/06/17   |Processing (java)|
+| - | 30/06/17   | C# |
+| Talking Clock | 01/07/17   | C# |
