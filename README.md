@@ -33,4 +33,4 @@ List of what I've done so far:
 | - | 30/06/17   | - |
 | Talking Clock | 01/07/17   | C# |
 | - | 02/07/17   | - |
-| - | 03/07/17   | - |
+| Weird name Gen | 03/07/17   | Processing (java) |
