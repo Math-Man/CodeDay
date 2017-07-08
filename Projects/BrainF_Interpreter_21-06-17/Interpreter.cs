@@ -31,7 +31,7 @@ namespace BrainF_Interpreter_21_06_17
 
             while (counter < leng)
             {
-                //Go thorught the "Code"
+                //Go thorugh the "Code"
                 switch (s[counter])
                 {
                     case '>':
