@@ -35,3 +35,9 @@ List of what I've done so far:
 | - | 02/07/17   | - |
 | Weird name Gen | 03/07/17   | Processing (java) |
 | Simple Physics | 08/07/17   | Processing (java) |
+| - | 09/07/17   | - |
+| - | 10/07/17   | 
+I've been going through troubled times lately and won't be able to practice as much as I'd like to do until everything is resolved |
+
+
+
