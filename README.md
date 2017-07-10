@@ -1,7 +1,7 @@
 # Code Every Day
 My attempt at becoming a better programer by coding something little everyday. 
 
-I've been going through troubled times lately and won't be able to practice as much as I'd like to do until everything is resolved.
+I've been going through troubled times lately and won't be able to practice as much as I'd like to, until everything is resolved.
 
 List of what I've done so far:
 
