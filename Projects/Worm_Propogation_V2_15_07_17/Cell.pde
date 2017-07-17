@@ -41,7 +41,7 @@ class InfectedCell extends Cell
   public void spread(CellTable t)
   {
     
-    float success = 0.1;    //How successfull the spread was, infectivity will change dependng on this number
+    float success = 0.04;    //How successfull the spread was, infectivity will change dependng on this number
     int area = ((range + 1) * (range + 1)); //How many cells are within range
     int infect = (int)Math.floor(random(0,area)); //pick the cell index to infect
     
@@ -69,7 +69,7 @@ class InfectedCell extends Cell
   
 }
 
-
+//TODO: Write the interactions between immune cells andinfected cells (if immune attempts to spread onto infected, infected will be less infectious etc.)
 
 class ImmuneCell extends Cell 
 { 
