@@ -1,17 +1,22 @@
 class CellTable
 {
   
+
+  
     ArrayList<Cell> cells = new ArrayList<Cell>();  //all cells contained within this table
   
     int tableStartX, tableStartY;
     
     int Width, Height; // Width and height of the table
-    color healthy, infected, immune; 
+    int hR,hG,hB, iR,iG,iB, imR,imG,imB; ///base Values for cell types
+    color infected, immune, healthy;
     
     int startInfectedCells = 10;
     int cellSize;
-    int infectionRange = 3;
+    int infectionRange = 2;
     int immuneRange = 2;
+    
+    boolean enableLines = true;
     
     //Create a new empty cellTable with given dimensions in cells and cell size in pixels
     public CellTable(int startX, int startY, int Width, int Height, int cellSize)
@@ -23,25 +28,53 @@ class CellTable
       this.tableStartX = startX;
       this.tableStartY = startY;
       
+      
+      int xo = 0, yo = 0;
+      
       //Create the empty cell table
-      for(int y = startY; y < Height; y += cellSize)
+      for(int y = startY; y < Height * cellSize; y += cellSize)
       {
-        for(int x = startX; x < Width ; x += cellSize)
+        xo = 0;
+        for(int x = startX; x < Width * cellSize ; x += cellSize)
         {
-          Cell c = new Cell(x, y, cellSize);
+          Cell c = new Cell(xo, yo, x, y, cellSize);
+          c.col = healthy;
           cells.add(c);
+          xo++;
         }
+        yo++;
       }
       
     }
+    
+    //Set the color bases, takes the color base for the healthy cells and derives differing colors from it
+    public void setColorSet(int r, int g, int b)
+    {
+      
+      hR = r; hG = g; hB = b;
+    
+      iR = ((255 + ((- g - b) % 255)) + r % 255)% 255; 
+      iG = ((255 + ((- r - b) % 255)) + g % 255)% 255; 
+      iB = ((255 + ((- r - g) % 255)) + b % 255)% 255; 
+    
+      imR = ((255 + ((- iG - iB) % 255)) + iR % 255)% 255; 
+      imG = ((255 + ((- iR - iB) % 255)) + iG % 255)% 255; 
+      imB = ((255 + ((- iR - iG) % 255)) + iB % 255)% 255; 
+      
+      this.healthy = color(hR,hG,hB);
+      this.infected = color(iR,iG,iB);
+      this.immune =  color(imR,imG,imB);
+      
+    }
+    
     
     //Get a cell at the given coordinates.
     public Cell getCellAt(int x, int y)
     {
       for(Cell c : cells)
       {
-        if(c.X == x && c.Y == y)
-        {
+        if(c.iX == x && c.iY == y)
+        {          
           return c;
         }
       }
@@ -50,72 +83,92 @@ class CellTable
       
     }
     
-    /*
-    *    TODO: fix the following methods with getcellat method. (Similar to immune)
-    */
+    
+    //gets the cell by the position on the canvas
+    public Cell getCellOn(int x, int y)
+    {
+      for(Cell c : cells)
+      {  //println(cells.indexOf(c));
+        if(c.X <= x && c.X + c.size > x && c.Y <= y && c.Y + c.size > y)//If the position is inside the cell
+        {
+          //println(cells.indexOf(c) + "!");
+          return c;
+        }
+      }
+      return null;
+    }
+    
+    
+    //returns the index of a cell within the list
+    public int getIndex(int x, int y)
+    {
+      for(Cell c : cells)
+      {  
+        if(c.iX ==  x && c.iY == y)
+        {
+          return cells.indexOf(c);
+        }
+      }
+      return -1;
+    }
+    
+    
+    public int getCellIndex(Cell ic)
+    {
+      for(Cell c : cells)
+      {
+        //println(c + " " + ic );
+        
+        if(c.equals(ic))
+        {
+          println("found");
+          return (cells.indexOf(ic));
+        }
+      }
+      
+      return -1;
+      
+    }
     
 
     //Infect the cell at given location
     public void Infect(int x, int y)
     {
-      //program will implode if there is an error 
-      Cell toInfect = null;
-      int i = -1;    
+
+      Cell toInfect = getCellOn(x,y);
+      //println(toInfect.iX + " " + toInfect.iY);
+      int index = getCellIndex(toInfect);
+      cells.set(index, new InfectedCell(toInfect.iX, toInfect.iY, toInfect.X, toInfect.Y, toInfect.size, infectionRange));
       
-      //Find the cell we are atempting to change
-      for(Cell c : cells)
-      {
-        if(c.X == x && c.Y == y)
-        {
-          toInfect = c;
-          i = cells.indexOf(c);
-        }
-      }
-      
-      //remove the cell and add it as an infectedCell
-      cells.remove(i);
-      cells.add(new InfectedCell(toInfect.X, toInfect.Y, toInfect.size, infectionRange));
     }
-    
     
     
     
     //heal the cell at given location
     public void heal(int x, int y)
     {
-      Cell toHeal = null;
-      int i = -1;
-      
-      
-      //Find the cell we are atempting to change
-      for(Cell c : cells)
-      {
-        if(c.X == x && c.Y == y)
-        {
-          toHeal = c;
-          i = cells.indexOf(c);
-        }
-      }
-      
-      //remove the cell and add it as an infectedCell
-      cells.remove(i);
-      cells.add(new Cell(toHeal.X, toHeal.Y, toHeal.size));
+      Cell toHeal = getCellOn(x, y);
+      int index = getCellIndex(toHeal);
+      cells.set(index, new Cell(toHeal.iX, toHeal.iY, toHeal.X, toHeal.Y, toHeal.size));
     }
     
-    
+    //Heal a cell at given index coordinates
+    public void healAt(int x, int y)
+    {
+      Cell toHeal = getCellAt(x, y);
+      int index = getCellIndex(toHeal);
+      cells.set(index, new Cell(toHeal.iX, toHeal.iY, toHeal.X, toHeal.Y, toHeal.size));
+    }
     
     //Give/take away immunity of a cell at given location
     public void immune(int x, int y)
     {
-      Cell toImmune = null;
-      int i = -1;
-      
-      toImmune = getCellAt(x,y);
-      i = cells.indexOf(toImmune);
-      
-      cells.remove(i);
-      cells.add(new ImmuneCell(toImmune.X, toImmune.Y, toImmune.size, immuneRange));
-      
+
+      Cell toImmune = getCellOn(x,y);
+      int index = getCellIndex(toImmune);
+
+      cells.set(index, new ImmuneCell(toImmune.iX, toImmune.iY, toImmune.X, toImmune.Y, toImmune.size, immuneRange));
+
     }
     
     
@@ -123,45 +176,63 @@ class CellTable
     public void updateTable()
     {
       for(Cell c: cells)
-      {
-        //if the cell is infected
-        if(c instanceof InfectedCell)
+      {  
+        
+        if(!c.impass)
         {
-          //TODO: Fix the spread part and complete rest of the function
-          //Downcasting like a b0ss
-          ((InfectedCell)c).spread(this);
+          //if the cell is infected
+          if(c instanceof InfectedCell)
+          {        
           
-        }
-        //if the cell is immune
-        else if(c instanceof ImmuneCell)
-        {
+          //change cell states depending on health
+          if( ((InfectedCell)c).infectivity <= 0)
+          {
+             this.healAt( ((InfectedCell)c).iX,  ((InfectedCell)c).iY);
+          }
+         
+            //Downcasting like a b0ss
+            ((InfectedCell)c).spread(this);
           
-        }
-        //if the cell is healthy
-        else 
-        {
+          }
+          //if the cell is immune
+          else if(c instanceof ImmuneCell)
+          {
+            ((ImmuneCell)c).spread(this);
+          }
+          //if the cell is healthy
+          else 
+          {
           
-        }
+          }
+        }        
       }
     }
-    
+
     //attempt to display all cells within this cellTable
     public void DisplayTable()
     {
-      //Go through all cells, change color depending on cell's state
-      for(Cell c : cells)
-      {
-        if(c.state == -1){stroke(healthy); fill(healthy);}
-        else if(c.state == 0){stroke(infected); fill(infected);}
-        else{stroke(immune); fill(immune);}
-        
-        c.display();
-      }
       
+       for(Cell c: cells)
+       { 
+         if(c.state == 0)
+         {
+             c.col = healthy;    
+         }
+         else if(c.state < 0)
+         {
+             c.col = infected;
+         }
+         else if(c.state > 0)
+         {
+           c.col = immune;
+         }
+         
+         if(c.impass)
+         {
+            c.col = color(0,0,0);
+         }
+         c.display();
+       
+       }
     }
-
-    
-    
-    
-
 }
