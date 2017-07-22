@@ -15,6 +15,7 @@ class CellTable
     int cellSize;
     int infectionRange = 2;
     int immuneRange = 2;
+    float baseResistance = 0.8;
     
     boolean enableLines = true;
     
@@ -37,7 +38,7 @@ class CellTable
         xo = 0;
         for(int x = startX; x < Width * cellSize ; x += cellSize)
         {
-          Cell c = new Cell(xo, yo, x, y, cellSize);
+          Cell c = new Cell(xo, yo, x, y, cellSize, baseResistance);
           c.col = healthy;
           cells.add(c);
           xo++;
@@ -138,7 +139,7 @@ class CellTable
       Cell toInfect = getCellOn(x,y);
       //println(toInfect.iX + " " + toInfect.iY);
       int index = getCellIndex(toInfect);
-      cells.set(index, new InfectedCell(toInfect.iX, toInfect.iY, toInfect.X, toInfect.Y, toInfect.size, infectionRange));
+      cells.set(index, new InfectedCell(toInfect.iX, toInfect.iY, toInfect.X, toInfect.Y, toInfect.size, infectionRange, toInfect.resistance));
       
     }
     
@@ -149,7 +150,7 @@ class CellTable
     {
       Cell toHeal = getCellOn(x, y);
       int index = getCellIndex(toHeal);
-      cells.set(index, new Cell(toHeal.iX, toHeal.iY, toHeal.X, toHeal.Y, toHeal.size));
+      cells.set(index, new Cell(toHeal.iX, toHeal.iY, toHeal.X, toHeal.Y, toHeal.size, toHeal.resistance));
     }
     
     //Heal a cell at given index coordinates
@@ -157,7 +158,7 @@ class CellTable
     {
       Cell toHeal = getCellAt(x, y);
       int index = getCellIndex(toHeal);
-      cells.set(index, new Cell(toHeal.iX, toHeal.iY, toHeal.X, toHeal.Y, toHeal.size));
+      cells.set(index, new Cell(toHeal.iX, toHeal.iY, toHeal.X, toHeal.Y, toHeal.size, toHeal.resistance));
     }
     
     //Give/take away immunity of a cell at given location
@@ -167,7 +168,7 @@ class CellTable
       Cell toImmune = getCellOn(x,y);
       int index = getCellIndex(toImmune);
 
-      cells.set(index, new ImmuneCell(toImmune.iX, toImmune.iY, toImmune.X, toImmune.Y, toImmune.size, immuneRange));
+      cells.set(index, new ImmuneCell(toImmune.iX, toImmune.iY, toImmune.X, toImmune.Y, toImmune.size, immuneRange, toImmune.resistance));
 
     }
     
@@ -177,6 +178,10 @@ class CellTable
     {
       for(Cell c: cells)
       {  
+        //fix resistance values of cells
+        if(c.resistance < 0) {c.resistance = 0;}
+        else if(c.resistance > 1){c.resistance = 1;}
+        
         
         if(!c.impass)
         {

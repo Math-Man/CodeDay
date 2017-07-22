@@ -8,13 +8,14 @@ class InfectedCell extends Cell
   float infectivityTickPercent;  //ups the infectivity by a percantage value of the infectivity
   int maxInfectionsPerTurn = 2;
   float maxInfectivity = 0.8;
-  float maxBolsters = 1;
+  float maxBolsters = 2;
   int maxAttacks = 3;
   float damageImmuneCells = 0.005;  //amount of FLAT damage done to immune cells, value changed by the ratio of current infectivity to max infectivity, has to go through resistance check, immuneCells cannot be turned back into healthy cells
+  float resistanceDebuff = 0.7;
   
-  public InfectedCell(int iX, int iY, int posX, int posY, int size, int r)
+  public InfectedCell(int iX, int iY, int posX, int posY, int size, int r, float res)
   {
-    super(iX, iY, posX, posY, size);  //call the parent constructor
+    super(iX, iY, posX, posY, size, res);  //call the parent constructor
     this.state = -1;
     this.range = r;
     this.infectivity = 0.01;
@@ -55,13 +56,14 @@ class InfectedCell extends Cell
            maxBolsters++;
         }
         
-        //check if the cell is in range, uses index values and the random infection chance passes
+        //check if the cell is in range, uses index values and the random infection chance passes also reduce the resistance
         if((c.iX > this.iX - range) && (c.iX < this.iX + range) && (c.iY > this.iY - range) && (c.iY < this.iY + range) && (infectivity > random(0,1)) && !(c instanceof InfectedCell) && !(c instanceof ImmuneCell) && (infectivity - infectivity * c.resistance/2 > random(0,1)) && !c.impass)
         {
           
           //Infect the current cell
-          t.cells.set(t.getIndex(c.iX, c.iY), new InfectedCell(c.iX, c.iY, c.X, c.Y, c.size, this.range));  
+          t.cells.set(t.getIndex(c.iX, c.iY), new InfectedCell(c.iX, c.iY, c.X, c.Y, c.size, this.range, c.resistance));  
           infections++;
+          c.resistance -= c.resistance * this.resistanceDebuff;
         }
         
         //Attempt to damage a nearby immune cell

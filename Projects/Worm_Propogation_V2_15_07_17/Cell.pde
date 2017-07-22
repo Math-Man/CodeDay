@@ -9,9 +9,9 @@ class Cell
   int size;        //Size of cell //<>// //<>//
   color col;
   String text = "H";
-  float resistance = 0.85; //chance for this cell to resist cell interactions half as effective against infected cells
+  float resistance; //chance for this cell to resist cell interactions half as effective against infected cells
   
-  public Cell(int iX, int iY, int posX, int posY, int size)
+  public Cell(int iX, int iY, int posX, int posY, int size, float resistance )
   {
     this.state = 0;
     this.X = posX;
@@ -19,6 +19,7 @@ class Cell
     this.iX = iX;
     this.iY = iY;
     this.size = size;
+    this.resistance = resistance;
   }
   
   
