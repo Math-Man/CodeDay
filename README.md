@@ -1,5 +1,5 @@
 # Code Every Day
-My attempt at becoming a better programer by coding something little everyday. 
+My attempt at becoming a better programer by coding something little ~~everyday~~ every once in a while. 
 
 I've been going through troubled times lately and won't be able to practice as much as I'd like to until everything is resolved.
 
@@ -19,13 +19,11 @@ List of what I've done so far:
 | Random Walker | 17/06/17   |Processing (java)|
 | Bitwise Multiplication | 19/06/17   | C# |
 | Brain Fck Interpreter | 21/06/17   | C# |
-| (Hiatus, no reliable internet for 5-6 days) | 22/06/17   | - |
-| Hiatus Over | 27/06/17   | - |
 | Worked on Genetic Alg | 28/06/17   |Processing (java)|
 | Finished Genetic Alg | 29/06/17   |Processing (java)|
 | Talking Clock | 01/07/17   | C# |
 | Weird name Gen | 03/07/17   | Processing (java) |
 | Simple Physics | 08/07/17   | Processing (java) |
 | 3SUM | 12/07/17   | C# |
-
+| WP V2 | 15/07/17 - 22/07/17 | Processing |
 
