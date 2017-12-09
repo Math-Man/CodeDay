@@ -27,3 +27,4 @@ List of what I've done so far:
 | Image Unscrambler | 28/11/17 | C# |
 | ASCII85 Decoder and Encoder | 03/12/17 | C# |
 | Mozart's Musical Dice | 07/12/17 | C# |
+| (bad)Procedural music generation | 10/12/17 | C# |
