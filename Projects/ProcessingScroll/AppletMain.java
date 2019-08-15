@@ -31,43 +31,56 @@ public class AppletMain  extends PApplet
 
     public void draw()
     {
-    	
+    	drawitems();
     }
 
     public void keyPressed()
     {
     	if(KeyCode.UP.getCode() == this.keyCode) 
     	{
-    		drawitems(OFFSETX, OFFSETY - SHIFT_AMOUNT);
+    		shiftItems(OFFSETX, OFFSETY - SHIFT_AMOUNT);
     	}
     	else if(KeyCode.DOWN.getCode() == this.keyCode) 
     	{
-    		drawitems(OFFSETX, OFFSETY + SHIFT_AMOUNT);
+    		shiftItems(OFFSETX, OFFSETY + SHIFT_AMOUNT);
     	}
     	else if(KeyCode.LEFT.getCode() == this.keyCode) 
     	{
-    		drawitems(OFFSETX - SHIFT_AMOUNT, OFFSETY);
+    		shiftItems(OFFSETX - SHIFT_AMOUNT, OFFSETY);
     	}
     	else if(KeyCode.RIGHT.getCode() == this.keyCode) 
     	{
-    		drawitems(OFFSETX + SHIFT_AMOUNT, OFFSETY);
+    		shiftItems(OFFSETX + SHIFT_AMOUNT, OFFSETY);
     	}
 	}
     
     
-    public void drawitems(int offsetX, int offsetY) 
+    public void shiftItems(int offsetX, int offsetY) 
+    {
+
+    	if(!(offsetX < 0 || offsetX > width)) 
+    	{
+    		OFFSETX = offsetX ;
+    	}
+    	
+    	if(!(offsetY < 0 || offsetY > height)) 
+    	{
+    		OFFSETY = offsetY ;
+    	}
+
+    }
+    
+    public void drawitems() 
     {
     	try 
     	{
-    	for(int i = 0; i < height; i++) 
-    	{
-    		for(int j = 0 ; j < width; j++) 
-    		{
-    			set(j, i, ints[j + OFFSETX + offsetX][i + OFFSETY + offsetY]);  
-    		}
-    	}
-    	OFFSETX = offsetX ;
-		OFFSETY = offsetY ;
+	    	for(int i = 0; i < height; i++) 
+	    	{
+	    		for(int j = 0 ; j < width; j++) 
+	    		{
+	    			set(j, i, ints[j + OFFSETX][i + OFFSETY ]);  
+	    		}
+	    	}
     	}
     	catch(Exception e) 
     	{
