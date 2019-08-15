@@ -13,8 +13,10 @@ public class AppletMain  extends PApplet
 
 	int[][] ints;
 	final int SHIFT_AMOUNT = 5;
+	final double MOUSE_THRESHOLD = 0.05;
 	int OFFSETX = 0;
 	int OFFSETY = 0;
+	
 	
     public void setup()
     {
@@ -31,30 +33,38 @@ public class AppletMain  extends PApplet
 
     public void draw()
     {
+    	controlCheck();
     	drawitems();
+    	
+    	
+    	stroke(255,0,0);
+    	ellipse(250, 250, 5, 5);
+    	
     }
 
-    public void keyPressed()
+    public void controlCheck()
     {
-    	if(KeyCode.UP.getCode() == this.keyCode) 
+    	
+    	
+    	if((keyPressed && KeyCode.UP.getCode() == this.keyCode) || (mouseY < height * (MOUSE_THRESHOLD))) 
     	{
     		shiftItems(OFFSETX, OFFSETY - SHIFT_AMOUNT);
     	}
-    	else if(KeyCode.DOWN.getCode() == this.keyCode) 
+    	else if((keyPressed &&  KeyCode.DOWN.getCode() == this.keyCode) || (mouseY > height * (1 - MOUSE_THRESHOLD))) 
     	{
     		shiftItems(OFFSETX, OFFSETY + SHIFT_AMOUNT);
     	}
-    	else if(KeyCode.LEFT.getCode() == this.keyCode) 
+    	else if((keyPressed && KeyCode.LEFT.getCode() == this.keyCode) || (mouseX < height * (MOUSE_THRESHOLD))) 
     	{
     		shiftItems(OFFSETX - SHIFT_AMOUNT, OFFSETY);
     	}
-    	else if(KeyCode.RIGHT.getCode() == this.keyCode) 
+    	else if((keyPressed && KeyCode.RIGHT.getCode() == this.keyCode) || (mouseX > height * (1 - MOUSE_THRESHOLD))) 
     	{
     		shiftItems(OFFSETX + SHIFT_AMOUNT, OFFSETY);
     	}
 	}
     
-    
+
     public void shiftItems(int offsetX, int offsetY) 
     {
 
