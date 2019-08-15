@@ -12,33 +12,36 @@ public class AppletMain  extends PApplet
     } 
 
 	int[][] ints;
-	final int SHIFT_AMOUNT = 5;
+	final int SHIFT_AMOUNT = 8;
 	final double MOUSE_THRESHOLD = 0.05;
 	int OFFSETX = 0;
 	int OFFSETY = 0;
+	final int BOARD_SIZE = 2000;
 	
 	
     public void setup()
     {
-    	ints = new int[1024][1024];
-    	for(int i = 0; i < 1024; i++) 
+    	ints = new int[BOARD_SIZE][BOARD_SIZE];
+    	for(int i = 0; i < BOARD_SIZE; i++) 
     	{
-    		for(int j = 0 ; j < 1024; j++) 
+    		for(int j = 0 ; j < BOARD_SIZE; j++) 
     		{
     			ints[j][i] = color(random(0,255));
-    			set(j, i, ints[j][i]);
+//    			set(j, i, ints[j][i]);
     		}
     	}
     }
 
     public void draw()
     {
+    	background(255);
     	controlCheck();
     	drawitems();
     	
     	
     	stroke(255,0,0);
     	ellipse(250, 250, 5, 5);
+    	
     	
     }
 
@@ -68,12 +71,12 @@ public class AppletMain  extends PApplet
     public void shiftItems(int offsetX, int offsetY) 
     {
 
-    	if(!(offsetX < 0 || offsetX > width)) 
+    	if(!(offsetX < 0 || offsetX + width > BOARD_SIZE )) 
     	{
     		OFFSETX = offsetX ;
     	}
     	
-    	if(!(offsetY < 0 || offsetY > height)) 
+    	if(!(offsetY < 0 || offsetY + height > BOARD_SIZE)) 
     	{
     		OFFSETY = offsetY ;
     	}
