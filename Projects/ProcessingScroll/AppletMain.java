@@ -6,17 +6,32 @@ import processing.core.PApplet;
 public class AppletMain  extends PApplet 
 {
 	
-	public void settings()
-	{
-		size(512,512);
-    } 
 
 	int[][] ints;
 	final int SHIFT_AMOUNT = 8;
 	final double MOUSE_THRESHOLD = 0.05;
+    final int WINDOWSIZE_X = 500;
+    final int WINDOWSIZE_Y = 380;
+    int BOARD_SIZE = 1000;
 	int OFFSETX = 0;
 	int OFFSETY = 0;
-	final int BOARD_SIZE = 2000;
+	
+	
+	public void settings()
+	{
+		size(WINDOWSIZE_X, WINDOWSIZE_Y);
+		
+		if(BOARD_SIZE < WINDOWSIZE_X ) 
+		{
+			BOARD_SIZE = WINDOWSIZE_X;
+		}
+		
+		if(BOARD_SIZE < WINDOWSIZE_Y) 
+		{
+			BOARD_SIZE = WINDOWSIZE_Y;
+		}
+    } 
+
 	
 	
     public void setup()
@@ -40,7 +55,7 @@ public class AppletMain  extends PApplet
     	
     	
     	stroke(255,0,0);
-    	ellipse(250, 250, 5, 5);
+    	ellipse(width/2, height/2, 5, 5);
     	
     	
     }
